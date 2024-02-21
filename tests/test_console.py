@@ -23,7 +23,6 @@ class testConsole(unittest.TestCase):
         p = style.check_files(["console.py"])
         self.assertEqual(p.total_errors, 0, 'fix Pep8')
 
-
     def test_docstrings(self):
         """test docstrings exist alredy"""
         self.assertIsNotNone(console.__doc__)
@@ -39,6 +38,7 @@ class testConsole(unittest.TestCase):
         self.assertIsNotNone(HBNBCommand.default.__doc__)
 
     def test_empty_line(self):
+        """lll"""
         with patch("sys.stdout", new=StringIO()) as out:
             self.assertFalse(HBNBCommand().onecmd(""))
             self.assertEqual("", out.getvalue().strip())
@@ -49,7 +49,6 @@ class testConsole(unittest.TestCase):
         result = pep8s.check_files(['console.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
-
 
     def test_pep8_conformance_test_console(self):
         """Test tests/test_console.py conforms to PEP8."""

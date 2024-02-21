@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""gggg"""
+""" """
 from tests.test_models.test_base_model import test_basemodel
 from datetime import datetime
 import inspect
@@ -14,16 +14,16 @@ storage_t = getenv("HBNB_TYPE_STORAGE")
 
 
 class test_Amenity(test_basemodel):
-    """ggg """
+    """ """
 
     def __init__(self, *args, **kwargs):
-        """ ggg"""
+        """ """
         super().__init__(*args, **kwargs)
         self.name = "Amenity"
         self.value = Amenity
 
     def test_name2(self):
-        """ggg """
+        """ """
         new = self.value(name="wifi")
         self.assertEqual(type(new.name), str)
 
