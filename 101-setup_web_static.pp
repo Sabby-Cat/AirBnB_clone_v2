@@ -1,4 +1,4 @@
-# Configures a web server for deployment of web_static.
+# Configure web server to deploy web_static
 
 # Nginx configuration file
 $nginx_conf = "server {
@@ -72,17 +72,14 @@ file { '/var/www/html/index.html':
   ensure  => 'present',
   content => "Holberton School Nginx\n"
 } ->
-
 file { '/var/www/html/404.html':
   ensure  => 'present',
   content => "Ceci n'est pas une page\n"
 } ->
-
 file { '/etc/nginx/sites-available/default':
   ensure  => 'present',
   content => $nginx_conf
 } ->
-
 exec { 'nginx restart':
   path => '/etc/init.d/'
 }
